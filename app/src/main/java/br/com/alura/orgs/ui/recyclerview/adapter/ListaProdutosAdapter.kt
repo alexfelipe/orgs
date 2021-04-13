@@ -28,11 +28,18 @@ class ListaProdutosAdapter(
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val layoutInflater = LayoutInflater.from(context)
-        val binding = ProdutoItemBinding.inflate(layoutInflater, parent, false)
+        val binding = ProdutoItemBinding.inflate(
+            layoutInflater,
+            parent,
+            false
+        )
         return ViewHolder(binding)
     }
 
-    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+    override fun onBindViewHolder(
+        holder: ViewHolder,
+        position: Int
+    ) {
         val produto = produtos[position]
         holder.vincula(produto)
     }
