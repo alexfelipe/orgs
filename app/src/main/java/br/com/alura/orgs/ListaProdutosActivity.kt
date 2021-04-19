@@ -4,6 +4,7 @@ import android.app.Activity
 import android.os.Bundle
 import android.util.Log
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import br.com.alura.orgs.databinding.ActivityListaProdutosBinding
@@ -13,7 +14,7 @@ import java.math.BigDecimal
 
 private const val TAG = "ListaProdutosActivity"
 
-class ListaProdutosActivity : Activity() {
+class ListaProdutosActivity : AppCompatActivity() {
 
     private val binding by lazy {
         ActivityListaProdutosBinding.inflate(layoutInflater)
