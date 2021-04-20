@@ -3,8 +3,8 @@ package br.com.alura.orgs
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import br.com.alura.orgs.dao.ProdutoDao
 import br.com.alura.orgs.databinding.ActivityFormularioProdutoBinding
-import br.com.alura.orgs.databinding.ActivityListaProdutosBinding
 import br.com.alura.orgs.model.Produto
 import java.math.BigDecimal
 
@@ -29,6 +29,10 @@ class FormularioProdutoActivity : AppCompatActivity() {
                 valor = BigDecimal(valor)
             )
             Log.i(TAG, "onCreate: produto novo criado $produtoNovo")
+            val dao = ProdutoDao()
+            dao.salva(produtoNovo)
+            Log.i(TAG, "onCreate: ${dao.buscaTodos()}")
+            finish()
         }
     }
 
